@@ -1,5 +1,7 @@
 package com.atguigu.mapper;
 
+import java.util.List;
+
 import com.atguigu.entity.OutWarehouse;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
@@ -12,5 +14,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @since 2020-09-25
  */
 public interface OutWarehouseMapper extends BaseMapper<OutWarehouse> {
-
+	//查询所有信息
+ List<OutWarehouse> findAll();
 }
