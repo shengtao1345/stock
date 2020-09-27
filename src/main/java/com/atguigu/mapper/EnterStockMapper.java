@@ -1,5 +1,7 @@
 package com.atguigu.mapper;
 
+import java.util.List;
+
 import com.atguigu.entity.EnterStock;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
@@ -12,5 +14,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @since 2020-09-25
  */
 public interface EnterStockMapper extends BaseMapper<EnterStock> {
-
+List<EnterStock>fidnAll();
 }
