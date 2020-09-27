@@ -25,7 +25,7 @@ swagger:
   enable: true
 
 mybatis-plus:
-  typeAliasesPackage: com.zzc.intern.entity
+  typeAliasesPackage: com.atguigu.entity
   mapper-locations: mapper/stack/*.xml
 
 logging:
