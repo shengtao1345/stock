@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.atguigu.mapper.PriceMapper">
-
+<insert id="add">
+insert into price  values(null,#{pType},#{pMoney},#{pBatch},#{pModel},#{pStutes} )
+</insert>
+<update id="update">
+update  price  set p_type=#{pType}, p_money=#{pMoney},p_batch=#{pBatch},p_model=#{pModel},p_stutes = #{pStutes} where p_id=#{pId}
+</update>
+<update id="deleteId">
+update  price  set p_stutes = 0 where p_id = #{pId}
+</update>
+<select id="findAll" resultType="com.atguigu.entity.Price">
+select * from price
+</select>
+<select id ="findModel"  resultType="com.atguigu.entity.Price">
+select * from where p_model = #{pModel}
+</select>
+<select id ="findBatch"  resultType="com.atguigu.entity.Price">
+select * from where p_batch = #{pBatch}
+</select>
+<select id ="findType"  resultType="com.atguigu.entity.Price">
+select * from where p_type = #{pType}
+</select>
 </mapper>

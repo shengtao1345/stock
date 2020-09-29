@@ -33,6 +33,9 @@ public class Property implements Serializable {
      * 属性
      */
     private String property;
-
-
+    /**
+     * 状态
+     *
+     */
+    private Integer sStutes;
 }

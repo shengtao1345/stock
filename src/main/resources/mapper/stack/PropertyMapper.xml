@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.atguigu.mapper.PropertyMapper">
-
+<select id="findAll" resultType = "com.atguigu.entity.Property" >
+select * from property
+</select>
+<insert id="add">
+insert  into property  values(null,#{property},#{sStutes})
+</insert>
+<update id="updateId">
+update property  set  property = #{property},s_stutes = #{sStutes} where s_id = #{sId}
+</update>
+<delete id="delete">
+update property set s_stutes = 0 where  s_id = #{sId}
+</delete>
+<select id="findById" resultType = "com.atguigu.entity.Property" >
+select * from property where  s_id = #{sId}
+</select>
+<select id="findProperty" resultType = "com.atguigu.entity.Property" >
+select * from property where  property=#{property}
+</select>
 </mapper>

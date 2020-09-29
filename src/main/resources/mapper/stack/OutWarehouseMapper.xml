@@ -4,5 +4,25 @@
 <select id="findAll" resultType="com.atguigu.entity.OutWarehouse">
 select * from out_warehouse
 </select>
-<delete id="updateId"></delete>
+<delete id="delete">
+update out_warehouse set c_stutes = 0 where c_id = #{cId}
+</delete>
+<update id="update">
+ UPDATE out_warehouse set c_type = #{cType},c_model = #{cModel},c_number=#{cNumber}, c_stutes = #{cStutes}, lastTime = #{lastTime} where c_id = #{cId}
+</update>
+<insert id="add" parameterType="com.atguigu.entity.OutWarehouse">
+insert into out_warehouse values(null,#{cType},#{cModel},#{cNumber},#{cBatch},#{cStutes},#{lastTime})
+</insert>
+<select id="findById"  resultType="com.atguigu.entity.OutWarehouse">
+select * from out_warehouse where  c_id = #{cId}
+</select>
+<select id="findCmodel" resultType="com.atguigu.entity.OutWarehouse" >
+select * from out_warehouse  where c_model = #{cModel} 
+</select>
+<select id="findType" resultType="com.atguigu.entity.OutWarehouse">
+ select * from out_warehouse where c_type = #{cType}
+</select>
+<select id="findBatch" resultType="com.atguigu.entity.OutWarehouse">
+select * from out_warehouse where c_batch = #{cBatch}
+</select>
 </mapper>

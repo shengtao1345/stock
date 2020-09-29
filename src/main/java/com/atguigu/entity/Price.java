@@ -44,6 +44,7 @@ public class Price implements Serializable {
      * 型号
      */
     private String pModel;
-
-
+    /**
+     * 状态
+     */
 }
