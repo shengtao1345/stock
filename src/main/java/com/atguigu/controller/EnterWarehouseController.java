@@ -10,6 +10,7 @@ import com.atguigu.entity.EnterWarehouse;
 import com.atguigu.service.IEnterWarehouseService;
 import com.atguigu.util.StockUtil;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 import java.util.List;
@@ -27,6 +28,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/stock/enterWarehouse")
+@Api(value = "仓库入库管理", tags = "仓库入库管理", description = "仓库入库管理")
 public class EnterWarehouseController {
 @Resource
 private IEnterWarehouseService iEnterWarehouseService;
