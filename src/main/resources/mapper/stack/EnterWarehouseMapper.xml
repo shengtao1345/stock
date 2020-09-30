@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.atguigu.mapper.EnterWarehouseMapper">
-
+<select id="findAll" resultType="com.atguigu.entity.EnterWarehouse">
+select * from enter_warehouse
+</select>
+<insert id="add" parameterType="com.atguigu.entity.EnterWarehouse">
+insert into enter_warehouse values(null,#{bType},#{bModel},#{bNumber},#{bBatch},#{bStutes},#{enterTime})
+</insert>
+<update id="update" parameterType="com.atguigu.entity.EnterWarehouse">
+update enter_warehouse set b_type=#{bType},b_batch=#{bBatch},b_model=#{bModel},b_number=#{bNumber},enterTime=#{enterTime} where b_id=#{bId}
+</update>
+<update id="delete" >
+update enter_warehouse set b_stutes=0 where b_id=#{bId}
+</update>
+<select id="findById" resultType="com.atguigu.entity.EnterWarehouse">
+select * from enter_warehouse where b_id=#{bId}
+</select>
+<select id="findByModel" resultType="com.atguigu.entity.EnterWarehouse">
+select * from enter_warehouse where b_model=#{bModel}
+</select>
+<select id="findByType" resultType="com.atguigu.entity.EnterWarehouse">
+select * from enter_warehouse where b_type=#{bType}
+</select>
+<select id="findByBatch" resultType="com.atguigu.entity.EnterWarehouse">
+select * from enter_warehouse where b_batch=#{bBatch}
+</select>
 </mapper>

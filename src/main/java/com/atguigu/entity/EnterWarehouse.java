@@ -3,6 +3,9 @@ package com.atguigu.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 import lombok.Data;
@@ -62,6 +65,7 @@ public class EnterWarehouse implements Serializable {
      * 入库时间
      */
     @TableField("enterTime")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime enterTime;
 
 

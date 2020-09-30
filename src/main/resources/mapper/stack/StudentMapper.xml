@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.atguigu.mapper.StudentMapper">
-
+<select id="findAll" resultType="com.atguigu.entity.Student">
+select * from student
+</select>
+<insert id="add" parameterType="com.atguigu.entity.Student">
+insert into student values(null,#{tName},#{tSex},#{tAge},#{tIdCard},#{tAddress},#{tStatus},#{tNumber})
+</insert>
+<update id="update" parameterType="com.atguigu.entity.Student">
+update student set t_name=#{tName},t_sex=#{tSex},t_age=#{tAge},t_id_card=#{tIdCard},t_address=#{tAddress},
+t_status=#{tStatus},t_number=#{tNumber} where t_id=#{tId}
+</update>
+<update id="delete" parameterType="com.atguigu.entity.Student">
+update student set t_status=0 where t_id=#{id}
+</update>
+<select id="findByName" resultType="com.atguigu.entity.Student">
+select * from student where t_name=#{tName}
+</select>
+<select id="findById" resultType="com.atguigu.entity.Student">
+select * from student where t_id=#{tId}
+</select>
+<select id="findByType" resultType="com.atguigu.entity.Student">
+select  * from stock inner join student on t_number=k_number where t_number=#{tNumber}
+</select>
 </mapper>
